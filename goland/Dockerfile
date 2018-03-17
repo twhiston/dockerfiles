@@ -1,6 +1,6 @@
 FROM fedora
 
-RUN dnf install -y which git findutils java-9-openjdk nodejs zsh util-linux-user && \
+RUN dnf install -y which git findutils java-9-openjdk nodejs zsh util-linux-user hostname && \
     dnf clean all
 
 RUN curl https://dl.google.com/go/go1.10.linux-amd64.tar.gz | tar -C /usr/local -xz

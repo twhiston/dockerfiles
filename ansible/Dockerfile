@@ -4,6 +4,7 @@
 FROM fedora
 
 LABEL maintainer="Tom Whiston <tom.whiston@gmail.com>"
+
 RUN dnf install -y git zsh sudo which python2-dnf libselinux-python  && dnf clean all \
     && adduser -u 1000 -s /usr/bin/zsh -g 0 developer
 
@@ -20,4 +21,5 @@ USER 1000
 WORKDIR /home/developer
 
 ENTRYPOINT [ "ansible" ]
+
 

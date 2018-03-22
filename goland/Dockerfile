@@ -1,6 +1,6 @@
 FROM fedora
 
-ARG USERNAME 
+LABEL RUN='docker run --rm -v /tmp/.X11-unix:/tmp/.X11-unix -v /home/${USER}:/home/developer -e USER=${SUDO_UID} -e GROUP=${SUDO_GID} -e DISPLAY=${DISPLAY} -v /var/run/docker.sock:/var/run/docker.sock --security-opt label=type:container_runtime_t tomwhiston/goland:latest'
 
 ENV GOLAND_VERSION=2017.3.3 \
     GO_VERSION=1.10 \
@@ -16,12 +16,13 @@ RUN curl https://dl.google.com/go/go${GO_VERSION}.linux-amd64.tar.gz | tar -C /u
     curl -L https://github.com/aelsabbahy/goss/releases/download/v${GOSS_VERSION}/goss-linux-amd64 -o /usr/local/bin/goss && \
     curl -L https://raw.githubusercontent.com/aelsabbahy/goss/v${GOSS_VERSION}/extras/dgoss/dgoss -o /usr/local/bin/dgoss && \
     chmod +rx /usr/local/bin/goss /usr/local/bin/dgoss && \
-    adduser -u 1000 -s /usr/bin/zsh -g 0  ${USERNAME} && \
+    adduser -u 1000 -s /usr/bin/zsh developer && \
     echo '%root ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers 
 USER 1000
-ENV PATH=$PATH:/usr/local/go/bin:/home/${USERNAME}/Code/golang/bin \
-    GOPATH=/home/${USERNAME}/Code/golang
+ENV PATH=$PATH:/usr/local/go/bin:/home/developer/Code/golang/bin \
+    GOPATH=/home/developer/Code/golang
 
-WORKDIR /home/${USERNAME}
+WORKDIR /home/developer
+VOLUME /home/developer
 
 CMD /opt/goland/GoLand-${GOLAND_VERSION}/bin/goland.sh

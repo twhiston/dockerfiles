@@ -1,0 +1,22 @@
+- type: parallel
+  steps:
+    - service: ansible
+      type: push
+      image_name: tomwhiston/ansible
+    - service: awscli
+      type: push
+      image_name: tomwhiston/awscli
+    - service: git
+      type: push
+      image_name: tomwhiston/git
+    - service: goland
+      type: push
+      image_name: tomwhiston/goland
+    - service: intellij
+      type: push
+      image_name: tomwhiston/intellij
+    - service: qmk
+      type: push
+      image_name: tomwhiston/qmk
+     
+

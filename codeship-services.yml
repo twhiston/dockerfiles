@@ -1,0 +1,34 @@
+version: '2'
+
+services:
+ 
+  ansible:
+    build:
+      image: tomwhiston/ansible
+      dockerfile: ansible/Dockerfile
+  
+  awscli:
+    build:
+      image: tomwhiston/awscli
+      dockerfile: awscli/Dockerfile
+
+  git:
+    build:
+      image: tomwhiston:git
+      dockerfile: git/Dockerfile
+
+  goland:
+    build:
+      image: tomwhiston/goland
+      dockerfile: goland/Dockerfile
+
+  intellij:
+    build:
+      image: tomwhiston/intellij
+      dockerfile: intellij/Dockerfile
+      
+
+  qmk:
+    build:
+      image: tomwhiston/qmk
+      dockerfile: qmk/Dockerfile

@@ -5,7 +5,7 @@ FROM fedora
 
 LABEL maintainer="Tom Whiston <tom.whiston@gmail.com>"
 
-RUN dnf install -y git zsh sudo which python2-dnf libselinux-python  && dnf clean all \
+RUN dnf install -y git zsh sshpass sudo net-tools which python2-dnf libselinux-python  && dnf clean all \
     && adduser -u 1000 -s /usr/bin/zsh -g 0 developer
 
 # living dangerously

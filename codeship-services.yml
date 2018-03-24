@@ -6,29 +6,34 @@ services:
     build:
       image: tomwhiston/ansible
       dockerfile: ansible/Dockerfile
-  
+    cached: true
+
   awscli:
     build:
       image: tomwhiston/awscli
       dockerfile: awscli/Dockerfile
+    cached: true
 
   git:
     build:
       image: tomwhiston:git
       dockerfile: git/Dockerfile
+    cached: true 
 
   goland:
     build:
       image: tomwhiston/goland
       dockerfile: goland/Dockerfile
+    cached: true 
 
   intellij:
     build:
       image: tomwhiston/intellij
       dockerfile: intellij/Dockerfile
-      
+    cached: true  
 
   qmk:
     build:
       image: tomwhiston/qmk
       dockerfile: qmk/Dockerfile
+    cached: true  

@@ -20,6 +20,12 @@ services:
       dockerfile: git/Dockerfile
     cached: true 
 
+  golang:
+    build:
+      image: tomwhiston/golang
+      dockerfile: golang/Dockerfile
+    cached: true 
+
   goland:
     build:
       image: tomwhiston/goland

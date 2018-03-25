@@ -12,6 +12,10 @@
       type: push
       image_name: tomwhiston/git
       encrypted_dockercfg_path: dockercfg.encrypted
+    - service: golang
+      type: push
+      image_name: tomwhiston/golang
+      encrypted_dockercfg_path: dockercfg.encrypted
     - service: goland
       type: push
       image_name: tomwhiston/goland

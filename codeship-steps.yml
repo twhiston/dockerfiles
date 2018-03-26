@@ -5,37 +5,37 @@
   steps:
    
     - service: ansible
-      types: push
+      type: push
       image_name: tomwhiston/ansible:latest
       encrypted_dockercfg_path: dockercfg.encrypted
     
     - service: awscli
-      types: push
+      type: push
       image_name: tomwhiston/awscli:latest
       encrypted_dockercfg_path: dockercfg.encrypted
     
     - service: git
-      types: push
+      type: push
       image_name: tomwhiston/git:latest
       encrypted_dockercfg_path: dockercfg.encrypted
     
     - service: goland
-      types: push
+      type: push
       image_name: tomwhiston/goland:latest
       encrypted_dockercfg_path: dockercfg.encrypted
     
     - service: golang
-      types: push
+      type: push
       image_name: tomwhiston/golang:latest
       encrypted_dockercfg_path: dockercfg.encrypted
     
     - service: intellij
-      types: push
+      type: push
       image_name: tomwhiston/intellij:latest
       encrypted_dockercfg_path: dockercfg.encrypted
     
     - service: qmk
-      types: push
+      type: push
       image_name: tomwhiston/qmk:latest
       encrypted_dockercfg_path: dockercfg.encrypted
     

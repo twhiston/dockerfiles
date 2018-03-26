@@ -17,7 +17,7 @@ RUN curl https://dl.google.com/go/go${GO_VERSION}.linux-amd64.tar.gz | tar -C /u
     curl -L https://raw.githubusercontent.com/aelsabbahy/goss/v${GOSS_VERSION}/extras/dgoss/dgoss -o /usr/local/bin/dgoss && \
     chmod +rx /usr/local/bin/goss /usr/local/bin/dgoss && \
     adduser -u 1000 -s /usr/bin/zsh developer && \
-    echo '%root ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers 
+    echo '%developer ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers 
 USER 1000
 ENV PATH=$PATH:/usr/local/go/bin:/home/developer/Code/golang/bin \
     GOPATH=/home/developer/Code/golang

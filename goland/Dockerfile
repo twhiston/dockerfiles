@@ -1,6 +1,6 @@
 FROM fedora
 
-LABEL RUN='docker run --rm -v /tmp/.X11-unix:/tmp/.X11-unix -v /home/${USER}:/home/developer -e USER=${SUDO_UID} -e GROUP=${SUDO_GID} -e DISPLAY=${DISPLAY} -v /var/run/docker.sock:/var/run/docker.sock --security-opt label=type:container_runtime_t tomwhiston/goland:latest'
+LABEL RUN='docker run --rm -v /tmp/.X11-unix:/tmp/.X11-unix -v /home/${USER}:/home/developer -e USER=${SUDO_UID} -e GROUP=${SUDO_GID} -e DISPLAY=${DISPLAY} -v /var/run/docker.sock:/var/run/docker.sock --security-opt label=type:container_runtime_t --security-opt seccomp=unconfined tomwhiston/goland:latest'
 
 ENV GOLAND_VERSION=2017.3.3 \
     GO_VERSION=1.10 \

@@ -23,12 +23,6 @@ services:
         dockerfile: git/Dockerfile
     cached: true
  
-  gitkraken:
-    build:
-        image: registry.twhiston.cloud/tomwhiston/gitkraken:latest
-        dockerfile: gitkraken/Dockerfile
-    cached: true
- 
   goland:
     build:
         image: registry.twhiston.cloud/tomwhiston/goland:latest

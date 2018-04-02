@@ -6,6 +6,9 @@
    {{ range .services }}
     - service: {{ .Name }}
       type: push
-      image_name: {{ if .Registry }}{{ .Registry }}/{{ end }}{{ .Namespace }}/{{ .Name }}{{ if .Tag }}:{{ .Tag }}{{ else }}:latest{{ end }}
+      image_name: {{ .Namespace }}/{{ .Name }}{{ if .Tag }}:{{ .Tag }}{{ else }}:latest{{ end }}
+      {{ if .Registry -}}
+      registry:  {{ .Registry }}
+      {{ end -}}   
       encrypted_dockercfg_path: dockercfg.encrypted
     {{ end }}

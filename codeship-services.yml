@@ -7,43 +7,43 @@ services:
  
   ansible:
     build:
-        image: tomwhiston/ansible:latest
+        image: registry.twhiston.cloud/tomwhiston/ansible:latest
         dockerfile: ansible/Dockerfile
     cached: true
  
   awscli:
     build:
-        image: tomwhiston/awscli:latest
+        image: registry.twhiston.cloud/tomwhiston/awscli:latest
         dockerfile: awscli/Dockerfile
     cached: true
  
   git:
     build:
-        image: tomwhiston/git:latest
+        image: registry.twhiston.cloud/tomwhiston/git:latest
         dockerfile: git/Dockerfile
     cached: true
  
   goland:
     build:
-        image: tomwhiston/goland:latest
+        image: registry.twhiston.cloud/tomwhiston/goland:latest
         dockerfile: goland/Dockerfile
     cached: true
  
   golang:
     build:
-        image: tomwhiston/golang:latest
+        image: registry.twhiston.cloud/tomwhiston/golang:latest
         dockerfile: golang/Dockerfile
     cached: true
  
   intellij:
     build:
-        image: tomwhiston/intellij:latest
+        image: registry.twhiston.cloud/tomwhiston/intellij:latest
         dockerfile: intellij/Dockerfile
     cached: true
  
   qmk:
     build:
-        image: tomwhiston/qmk:latest
+        image: registry.twhiston.cloud/tomwhiston/qmk:latest
         dockerfile: qmk/Dockerfile
     cached: true
  

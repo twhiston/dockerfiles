@@ -6,36 +6,41 @@
    
     - service: ansible
       type: push
-      image_name: tomwhiston/ansible:latest
+      image_name: registry.twhiston.cloud/tomwhiston/ansible:latest
       encrypted_dockercfg_path: dockercfg.encrypted
     
     - service: awscli
       type: push
-      image_name: tomwhiston/awscli:latest
+      image_name: registry.twhiston.cloud/tomwhiston/awscli:latest
       encrypted_dockercfg_path: dockercfg.encrypted
     
     - service: git
       type: push
-      image_name: tomwhiston/git:latest
+      image_name: registry.twhiston.cloud/tomwhiston/git:latest
+      encrypted_dockercfg_path: dockercfg.encrypted
+    
+    - service: gitkraken
+      type: push
+      image_name: registry.twhiston.cloud/tomwhiston/gitkraken:latest
       encrypted_dockercfg_path: dockercfg.encrypted
     
     - service: goland
       type: push
-      image_name: tomwhiston/goland:latest
+      image_name: registry.twhiston.cloud/tomwhiston/goland:latest
       encrypted_dockercfg_path: dockercfg.encrypted
     
     - service: golang
       type: push
-      image_name: tomwhiston/golang:latest
+      image_name: registry.twhiston.cloud/tomwhiston/golang:latest
       encrypted_dockercfg_path: dockercfg.encrypted
     
     - service: intellij
       type: push
-      image_name: tomwhiston/intellij:latest
+      image_name: registry.twhiston.cloud/tomwhiston/intellij:latest
       encrypted_dockercfg_path: dockercfg.encrypted
     
     - service: qmk
       type: push
-      image_name: tomwhiston/qmk:latest
+      image_name: registry.twhiston.cloud/tomwhiston/qmk:latest
       encrypted_dockercfg_path: dockercfg.encrypted
     

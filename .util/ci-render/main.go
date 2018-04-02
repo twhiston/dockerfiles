@@ -1,4 +1,4 @@
-package ci_render
+package main
 
 import (
 	"fmt"
@@ -34,12 +34,12 @@ func main() {
 	for _, f := range files {
 		if f.IsDir() && !strings.HasPrefix(f.Name(), ".") {
 			fmt.Println(f.Name())
-			subdirs = append(subdirs, ImageDef{Name: f.Name(), Namespace: "tomwhiston"})
+			subdirs = append(subdirs, ImageDef{Name: f.Name(), Namespace: "tomwhiston", Registry: "registry.twhiston.cloud"})
 		}
 	}
 	dataset["services"] = subdirs
 
-	tmpl := template.Must(template.ParseGlob(".util/tmpl/*.tmpl"))
+	tmpl := template.Must(template.ParseGlob(".util/ci-render/tmpl/*.tmpl"))
 
 	render("services", dataset, tmpl)
 	render("steps", dataset, tmpl)

@@ -9,7 +9,7 @@ RUN dnf install -y git zsh sshpass sudo net-tools which python2-dnf libselinux-p
     && adduser -u 1000 -s /usr/bin/zsh -g 0 developer
 
 # living dangerously
-RUN pip install git+https://github.com/ansible/ansible.git@devel
+RUN pip install git+https://github.com/ansible/ansible.git@devel openshift
 
 # Disable requiretty.
 RUN sed -i -e 's/^\(Defaults\s*requiretty\)/#--- \1/'  /etc/sudoers

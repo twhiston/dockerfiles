@@ -6,18 +6,19 @@ ENV GOLAND_VERSION=2017.3.3 \
     GO_VERSION=1.10 \
     GOSS_VERSION=0.3.5
 
-RUN dnf install -y which sudo git findutils java-9-openjdk nodejs zsh util-linux-user hostname gcc dnf-plugins-core && \
+RUN dnf install -y ansible docker-compose which sudo git findutils java-9-openjdk nodejs zsh util-linux-user hostname gcc dnf-plugins-core && \
     dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo && \
     dnf install -y docker-ce && \
-    dnf clean all
+    dnf clean all && \
+    adduser -u 1000 -s /usr/bin/zsh developer && \
+    echo '%developer ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers 
 
 RUN curl https://dl.google.com/go/go${GO_VERSION}.linux-amd64.tar.gz | tar -C /usr/local -xz && \
     mkdir /opt/goland && curl https://download-cf.jetbrains.com/go/goland-${GOLAND_VERSION}.tar.gz | tar -C /opt/goland -xz && \
     curl -L https://github.com/aelsabbahy/goss/releases/download/v${GOSS_VERSION}/goss-linux-amd64 -o /usr/local/bin/goss && \
     curl -L https://raw.githubusercontent.com/aelsabbahy/goss/v${GOSS_VERSION}/extras/dgoss/dgoss -o /usr/local/bin/dgoss && \
-    chmod +rx /usr/local/bin/goss /usr/local/bin/dgoss && \
-    adduser -u 1000 -s /usr/bin/zsh developer && \
-    echo '%developer ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers 
+    chmod +rx /usr/local/bin/goss /usr/local/bin/dgoss
+
 USER 1000
 ENV PATH=$PATH:/usr/local/go/bin:/home/developer/Code/golang/bin \
     GOPATH=/home/developer/Code/golang

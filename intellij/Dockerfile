@@ -8,6 +8,7 @@ RUN dnf install -y sudo ansible docker-compose which git findutils java-9-openjd
     dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo && \
     dnf install -y docker-ce && \
     dnf clean all && \
+    pip install virtualenv && \
     adduser -u 1000 -s /usr/bin/zsh developer && \
     echo '%developer ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 

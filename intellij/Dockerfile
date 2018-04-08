@@ -4,7 +4,7 @@ LABEL RUN='docker run --rm -v /tmp/.X11-unix:/tmp/.X11-unix -v /home/\${USER}:/h
 
 ENV INTELLIJ_VERSION=U-2017.3.5
 
-RUN dnf install -y sudo ansible docker-compose which git findutils java-9-openjdk nodejs zsh util-linux-user hostname gcc dnf-plugins-core && \
+RUN dnf install -y python3 sudo ansible docker-compose which git findutils java-9-openjdk nodejs zsh util-linux-user hostname gcc dnf-plugins-core && \
     dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo && \
     dnf install -y docker-ce && \
     dnf clean all && \

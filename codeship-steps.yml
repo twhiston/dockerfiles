@@ -34,15 +34,22 @@
       registry:  registry.twhiston.cloud
       encrypted_dockercfg_path: dockercfg.encrypted
     
+    - service: gron
+      type: push
+      image_name: registry.twhiston.cloud/tomwhiston/gron:latest
+      registry:  registry.twhiston.cloud
+      encrypted_dockercfg_path: dockercfg.encrypted
+    
     - service: intellij
       type: push
       image_name: registry.twhiston.cloud/tomwhiston/intellij:latest
       registry:  registry.twhiston.cloud
       encrypted_dockercfg_path: dockercfg.encrypted
-    
+       
     - service: qmk
       type: push
       image_name: registry.twhiston.cloud/tomwhiston/qmk:latest
       registry:  registry.twhiston.cloud
       encrypted_dockercfg_path: dockercfg.encrypted
     
+

@@ -35,6 +35,12 @@ services:
         dockerfile: golang/Dockerfile
     cached: true
  
+  gron:
+    build:
+        image: registry.twhiston.cloud/tomwhiston/gron:latest
+        dockerfile: gron/Dockerfile
+    cached: true
+ 
   intellij:
     build:
         image: registry.twhiston.cloud/tomwhiston/intellij:latest
@@ -47,3 +53,4 @@ services:
         dockerfile: qmk/Dockerfile
     cached: true
  
+

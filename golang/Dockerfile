@@ -1,6 +1,6 @@
 FROM fedora
 
-LABEL RUN='docker run --rm -v $(pwd):/home/developer -e USER=${SUDO_UID} -e GROUP=${SUDO_GID} --security-opt label=type:container_runtime_t tomwhiston/golang:latest'
+LABEL RUN='docker run --rm -v $(pwd):/home/developer -e USER=${SUDO_UID} -e GROUP=${SUDO_GID} --security-opt label=type:container_runtime_t registry.twhiston.cloud/tomwhiston/golang:latest'
 
 ENV GO_VERSION=1.10 
 

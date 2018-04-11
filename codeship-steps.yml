@@ -16,6 +16,12 @@
       registry:  registry.twhiston.cloud
       encrypted_dockercfg_path: dockercfg.encrypted
     
+    - service: dredd
+      type: push
+      image_name: registry.twhiston.cloud/tomwhiston/dredd:latest
+      registry:  registry.twhiston.cloud
+      encrypted_dockercfg_path: dockercfg.encrypted
+    
     - service: git
       type: push
       image_name: registry.twhiston.cloud/tomwhiston/git:latest
@@ -45,11 +51,16 @@
       image_name: registry.twhiston.cloud/tomwhiston/intellij:latest
       registry:  registry.twhiston.cloud
       encrypted_dockercfg_path: dockercfg.encrypted
-       
+    
     - service: qmk
       type: push
       image_name: registry.twhiston.cloud/tomwhiston/qmk:latest
       registry:  registry.twhiston.cloud
       encrypted_dockercfg_path: dockercfg.encrypted
     
-
+      #    - service: tidal-cli
+      #      type: push
+      #      image_name: registry.twhiston.cloud/tomwhiston/tidal-cli:latest
+      #      registry:  registry.twhiston.cloud
+      #      encrypted_dockercfg_path: dockercfg.encrypted
+    

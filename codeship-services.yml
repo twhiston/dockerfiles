@@ -17,6 +17,12 @@ services:
         dockerfile: awscli/Dockerfile
     cached: true
  
+  datagrip:
+    build:
+        image: registry.twhiston.cloud/tomwhiston/datagrip:latest
+        dockerfile: datagrip/Dockerfile
+    cached: true
+ 
   dredd:
     build:
         image: registry.twhiston.cloud/tomwhiston/dredd:latest
@@ -59,9 +65,4 @@ services:
         dockerfile: qmk/Dockerfile
     cached: true
  
-    #  tidal-cli:
-    #    build:
-    #        image: registry.twhiston.cloud/tomwhiston/tidal-cli:latest
-    #        dockerfile: tidal-cli/Dockerfile
-    #    cached: true
- 
+

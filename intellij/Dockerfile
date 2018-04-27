@@ -1,6 +1,6 @@
 FROM fedora
 
-LABEL RUN='docker run --rm -v /tmp/.X11-unix:/tmp/.X11-unix -v /home/\${USER}:/home/developer -e USER=\${SUDO_UID} -e GROUP=\${SUDO_GID} -e DISPLAY=\${DISPLAY} -v /var/run/docker.sock:/var/run/docker.sock --security-opt label=type:container_runtime_t --security-opt seccomp=unconfined registry.twhiston.cloud/tomwhiston/intellij:latest'
+LABEL RUN='podman run -v /tmp/.X11-unix:/tmp/.X11-unix -v /home/\${USER}:/home/developer -e USER=\${SUDO_UID} -e GROUP=\${SUDO_GID} -e DISPLAY=\${DISPLAY} -v /var/run/docker.sock:/var/run/docker.sock --security-opt label=type:container_runtime_t --security-opt seccomp=unconfined registry.twhiston.cloud/tomwhiston/intellij:latest'
 
 ENV INTELLIJ_VERSION=U-2017.3.5
 

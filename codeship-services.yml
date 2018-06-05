@@ -58,6 +58,12 @@ services:
         image: registry.twhiston.cloud/tomwhiston/intellij:latest
         dockerfile: intellij/Dockerfile
     cached: true
+
+  pwnd:
+    build:
+        image: registry.twhiston.cloud/tomwhiston/pwnd:latest
+        dockerfile: pwnd/Dockerfile
+    cached: true
  
   qmk:
     build:

@@ -58,6 +58,12 @@
       registry:  registry.twhiston.cloud
       encrypted_dockercfg_path: dockercfg.encrypted
     
+    - service: pwnd
+      type: push
+      image_name: registry.twhiston.cloud/tomwhiston/pwnd:latest
+      registry:  registry.twhiston.cloud
+      encrypted_dockercfg_path: dockercfg.encrypted
+    
     - service: qmk
       type: push
       image_name: registry.twhiston.cloud/tomwhiston/qmk:latest
